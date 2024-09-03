@@ -1,0 +1,33 @@
+@if(!isDataLoading){
+    <div class="card">
+        <form [formGroup]="form" >
+          <app-control label="Amount">
+            <p-inputNumber inputId="Amount" formControlName="amount" />
+          </app-control>
+          <app-control label="From">
+            <p-dropdown
+              [options]="currencies"
+              formControlName="from"
+              optionLabel="name"
+              optionValue="code"
+              placeholder="From"
+            />
+          </app-control>
+          <div class="swap-icon" (click)="onSwap()">
+            <i class="pi pi-sort-alt"></i>
+          </div>
+          <app-control label="To">
+            <p-dropdown
+              [options]="currencies"
+              formControlName="to"
+              optionLabel="name"
+              optionValue="code"
+              placeholder="TO"
+            />
+          </app-control>
+          <div class="action">
+            <button  [disabled]="form.invalid" (click)="onConvert()">Convert</button>
+          </div>
+        </form>
+      </div>
+}
