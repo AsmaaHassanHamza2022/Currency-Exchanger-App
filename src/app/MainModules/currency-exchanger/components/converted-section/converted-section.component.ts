@@ -10,8 +10,6 @@ export class ConvertedSectionComponent {
 
   constructor(public currencyExService:CurrencyExchangerService){}
 
-  goToDetails(){
-    
-  }
+
 
 }

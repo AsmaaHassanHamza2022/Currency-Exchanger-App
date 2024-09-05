@@ -54,4 +54,6 @@ export class CurrencyExchangerService {
     this.currentAmountData=currentAmountData;
     this.convertedAmountData=convertedAmountData;
   }
+
+ 
 }

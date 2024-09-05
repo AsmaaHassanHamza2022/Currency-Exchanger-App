@@ -7,7 +7,7 @@ const routes: Routes = [
   {
     path:'',
     component:MainLayoutComponent,
-    pathMatch:'full',
+    // pathMatch:'full',
     children:[
       {
         path:'',

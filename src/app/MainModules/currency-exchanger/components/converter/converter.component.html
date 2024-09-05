@@ -11,6 +11,7 @@
               optionLabel="name"
               optionValue="code"
               placeholder="From"
+              [disabled]="true"
             />
           </app-control>
           <div class="swap-icon" (click)="onSwap()">
@@ -23,6 +24,7 @@
               optionLabel="name"
               optionValue="code"
               placeholder="TO"
+              [disabled]="isToDisabled"
             />
           </app-control>
           <div class="action">

@@ -11,6 +11,7 @@ import { ConverterComponent } from './components/converter/converter.component';
 import { ConvertedSectionComponent } from './components/converted-section/converted-section.component';
 import { CustomBtnComponent } from '../../Shared/components/custom-btn/custom-btn.component';
 import { QuickConversionsComponent } from './components/quick-conversions/quick-conversions.component';
+import { DetailsPageComponent } from './pages/details-page/details-page.component';
 
 const standaloneComponents=[
   ControlComponent,
@@ -22,7 +23,8 @@ const standaloneComponents=[
     MainExchangerPageComponent,
     ConverterComponent,
     ConvertedSectionComponent,
-    QuickConversionsComponent
+    QuickConversionsComponent,
+    DetailsPageComponent
   ],
   imports: [
     CommonModule,

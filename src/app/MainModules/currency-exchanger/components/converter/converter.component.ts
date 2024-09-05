@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ICurrency, ILatestAPiPrams, ISymbols } from '../../utilities/models';
 import { CurrencyExchangerService } from '../../services/currency-exchanger.service';
@@ -13,6 +13,12 @@ export class ConverterComponent implements OnInit {
   form!: FormGroup;
   currencies: ICurrency[] = [];
   isDataLoading: boolean = false;
+  @Input() set isFromDisabled(data:boolean){
+   
+
+  }
+  @Input() isToDisabled:boolean=false;
+  
 
   constructor(
     private formBuilder: FormBuilder,

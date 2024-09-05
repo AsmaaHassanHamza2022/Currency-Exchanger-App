@@ -6,7 +6,7 @@
     <h3>{{currencyExService?.convertedAmountData?.amount}} {{currencyExService?.convertedAmountData?.name}}</h3>
   </div>
   <div class="action">
-    <button (click)="goToDetails()" customBtn>Details</button>
+    <button [routerLink]="['/details']" customBtn>Details</button>
 
   </div>
 
