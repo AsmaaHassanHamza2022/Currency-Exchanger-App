@@ -1,6 +1,7 @@
 export class APIs {
   static ConversionApis = {
     "GetCurrencySymbols":"/symbols",
-    "ConvertAmount":"/convert"
+    "ConvertAmount":"/convert",
+    "GetLatestRates":"/latest"
   };
 }

@@ -1,0 +1,11 @@
+<div class="card">
+    <h2>convert <span class="from">{{configs()?.sourceCurrencyName }}</span> to {{ configs()?.targetCurrencyName}}</h2>
+    <table>
+        @for(item of configs()?.conversions ;track item ){
+            <tr>
+                <td>{{item.from}} {{ configs()?.sourceCurrencyName }}</td>
+                <td>{{item.to}} {{ configs()?.targetCurrencyName}}</td>
+            </tr>
+        }
+    </table>
+</div>

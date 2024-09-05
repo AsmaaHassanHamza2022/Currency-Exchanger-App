@@ -1,2 +1,13 @@
 
 <app-converter></app-converter>
+<app-converted-section></app-converted-section>
+
+@if(!!(this.currencyExService.currentExchangeRate$ |async)){
+    <div class="static-conversion-list">
+        <app-quick-conversions class="list" [configs]="staticDateForFromValue"></app-quick-conversions>
+        <app-quick-conversions class="list" [configs]="staticDateForToValue"></app-quick-conversions>
+    </div>
+    
+}
+
+

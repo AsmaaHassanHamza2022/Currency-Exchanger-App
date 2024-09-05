@@ -33,3 +33,36 @@ interface IQuery {
   to: string;
   amount: number;
 }
+
+export interface ILatestAPiPrams{
+  symbols :string,
+  base :string
+}
+
+export interface ILatestRes {
+  success: boolean;
+  timestamp: number;
+  base: string;
+  date: string;
+  rates: Rates;
+}
+interface Rates {
+  [key:string]: number;
+  
+}
+
+export interface ISelectedValue{
+  name:string,
+  amount:number
+}
+
+export interface IStaticTableConfigs{
+  sourceCurrencyName:string;
+  targetCurrencyName:string;
+  conversions:IConversion[]
+}
+
+export interface IConversion{
+  from:number,
+  to:number
+}

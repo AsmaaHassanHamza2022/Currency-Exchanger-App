@@ -8,15 +8,21 @@ import { ControlComponent } from '../../Shared/components/control/control.compon
 import { PrimengModule } from '../../primengModule/primeng.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConverterComponent } from './components/converter/converter.component';
+import { ConvertedSectionComponent } from './components/converted-section/converted-section.component';
+import { CustomBtnComponent } from '../../Shared/components/custom-btn/custom-btn.component';
+import { QuickConversionsComponent } from './components/quick-conversions/quick-conversions.component';
 
 const standaloneComponents=[
-  ControlComponent
+  ControlComponent,
+  CustomBtnComponent
 ]
 
 @NgModule({
   declarations: [
     MainExchangerPageComponent,
-    ConverterComponent
+    ConverterComponent,
+    ConvertedSectionComponent,
+    QuickConversionsComponent
   ],
   imports: [
     CommonModule,
