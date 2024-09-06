@@ -1,7 +1,39 @@
-<div class="back">
-    <span [routerLink]="['/']"><</span>
-
+<div [routerLink]="['/']" class="back">
+  <span>
+    <i class="pi pi-arrow-left"></i>
+  </span>
 </div>
 
 <app-converter [isFromDisabled]="true"></app-converter>
 <app-converted-section></app-converted-section>
+
+
+<section class="card">
+    <h2>Historical Exchange Rates</h2>
+    <div class="historical-data">
+      <div class="historical-item">
+        <h3>Last Year ({{ historicalData.lastYear?.date }})</h3>
+        <ul>
+          <li *ngFor="let rate of historicalData.lastYear?.rates | keyvalue">
+            {{ rate.key }}: {{ rate.value }}
+          </li>
+        </ul>
+      </div>
+      <div class="historical-item">
+        <h3>Last Month ({{ historicalData.lastMonth?.date }})</h3>
+        <ul>
+          <li *ngFor="let rate of historicalData.lastMonth?.rates | keyvalue">
+            {{ rate.key }}: {{ rate.value }}
+          </li>
+        </ul>
+      </div>
+      <div class="historical-item">
+        <h3>Last Day ({{ historicalData.lastDay?.date }})</h3>
+        <ul>
+          <li *ngFor="let rate of historicalData.lastDay?.rates | keyvalue">
+            {{ rate.key }}: {{ rate.value }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>

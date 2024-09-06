@@ -54,6 +54,7 @@ interface Rates {
 export interface ISelectedValue{
   name:string,
   amount:number
+  code:string
 }
 
 export interface IStaticTableConfigs{
@@ -65,4 +66,12 @@ export interface IStaticTableConfigs{
 export interface IConversion{
   from:number,
   to:number
+}
+
+export interface IHistoricalResponse{
+  success: boolean;
+  timestamp: number;
+  base: string;
+  date: string;
+  rates: { [key: string]: number };
 }

@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ICurrency, ILatestAPiPrams, ISymbols } from '../../utilities/models';
 import { CurrencyExchangerService } from '../../services/currency-exchanger.service';
 import { finalize } from 'rxjs';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-converter',
@@ -13,16 +14,14 @@ export class ConverterComponent implements OnInit {
   form!: FormGroup;
   currencies: ICurrency[] = [];
   isDataLoading: boolean = false;
-  @Input() set isFromDisabled(data:boolean){
-   
-
-  }
-  @Input() isToDisabled:boolean=false;
-  
+  isDetails: boolean = false;
+  @Input() isFromDisabled: boolean = false;
+  @Input() isToDisabled: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
-    private currencyService: CurrencyExchangerService
+    private currencyService: CurrencyExchangerService,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
@@ -35,6 +34,22 @@ export class ConverterComponent implements OnInit {
       from: ['EUR', [Validators.required]],
       to: ['USD', [Validators.required]],
       amount: [1, [Validators.required]],
+    });
+
+    if (this.isFromDisabled) {
+      this.getPrams();
+    }
+  }
+  getPrams() {
+    this.route.queryParams.subscribe((prams: Params) => {
+      if (prams['from'] && prams['to'] &&prams['amount']) {
+        this.form.get('from')?.setValue(prams['from']);
+        this.form.get('to')?.setValue(prams['to']);
+        this.form.get('amount')?.setValue(prams['amount']);
+      }
+      this.form.get('to')?.disable();
+      this.form.get('from')?.disable();
+      this.isDetails = true;
     });
   }
 

@@ -1,14 +1,24 @@
-@if(!!currencyExService?.convertedAmountData?.amount){
+@if(!!currencyExService?.convertedAmountData){
 <div class="card">
-    <h2>Conversion Result </h2>
+  @if(!!currencyExService?.convertedAmountData?.amount ){
+  <h2>Conversion Result</h2>
   <div class="result">
-    <h3>{{currencyExService?.currentAmountData?.amount}} {{currencyExService?.currentAmountData?.name}} =</h3>
-    <h3>{{currencyExService?.convertedAmountData?.amount}} {{currencyExService?.convertedAmountData?.name}}</h3>
+    <h3>
+      {{ currencyExService?.currentAmountData?.amount }}
+      {{ currencyExService?.currentAmountData?.name }} =
+    </h3>
+    <h3>
+      {{ currencyExService?.convertedAmountData?.amount }}
+      {{ currencyExService?.convertedAmountData?.name }}
+    </h3>
   </div>
-  <div class="action">
-    <button [routerLink]="['/details']" customBtn>Details</button>
-
+  <div class="action" *ngIf="!isDetailsPage">
+    <button (click)="navigateOnDetails()" customBtn>Details</button>
   </div>
 
+  } @else {
+
+  <h4>Base currency access restricted please use EUR as a Base</h4>
+  }
 </div>
 }
