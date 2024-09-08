@@ -1,15 +1,15 @@
-@if(!!currencyExService?.convertedAmountData){
+@if(!!currencyExService.convertedAmountData){
 <div class="card">
-  @if(!!currencyExService?.convertedAmountData?.amount ){
+  @if(!!currencyExService.convertedAmountData.amount ){
   <h2>Conversion Result</h2>
   <div class="result">
     <h3>
-      {{ currencyExService?.currentAmountData?.amount }}
-      {{ currencyExService?.currentAmountData?.name }} =
+      {{ currencyExService.currentAmountData.amount }}
+      {{ currencyExService.currentAmountData.name }} =
     </h3>
     <h3>
-      {{ currencyExService?.convertedAmountData?.amount }}
-      {{ currencyExService?.convertedAmountData?.name }}
+      {{ currencyExService.convertedAmountData.amount }}
+      {{ currencyExService.convertedAmountData.name }}
     </h3>
   </div>
   <div class="action" *ngIf="!isDetailsPage">
